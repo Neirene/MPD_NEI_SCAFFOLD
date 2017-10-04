@@ -1,0 +1,36 @@
+{
+  "name": "condorjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "init": "mkdir dist",
+    "clean": "rmdir /Q /S dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server --inline --hot",
+    "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js",
+    "start": "npm run dev"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
